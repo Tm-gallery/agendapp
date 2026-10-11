@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/w_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:id="@+id/btn_new"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/w_pill_primary"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_w_add"
+            android:tint="@color/w_on_primary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="google-sans-medium"
+            android:singleLine="true"
+            android:text="@string/w_new"
+            android:textColor="@color/w_on_primary"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/btn_sync"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="44dp"
+                android:background="@drawable/w_square_tonal"
+                android:importantForAccessibility="no"
+                android:padding="10dp"
+                android:src="@drawable/ic_w_sync"
+                android:tint="@color/w_on_secondary_container" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="google-sans"
+                android:singleLine="true"
+                android:text="@string/w_sync"
+                android:textColor="@color/w_on_var"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_plan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="44dp"
+                android:background="@drawable/w_square_tonal"
+                android:importantForAccessibility="no"
+                android:padding="10dp"
+                android:src="@drawable/ic_w_agenda"
+                android:tint="@color/w_on_secondary_container" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="google-sans"
+                android:singleLine="true"
+                android:text="@string/w_plan"
+                android:textColor="@color/w_on_var"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_backup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="44dp"
+                android:background="@drawable/w_square_tonal"
+                android:importantForAccessibility="no"
+                android:padding="10dp"
+                android:src="@drawable/ic_w_backup"
+                android:tint="@color/w_on_secondary_container" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="google-sans"
+                android:singleLine="true"
+                android:text="@string/w_backup"
+                android:textColor="@color/w_on_var"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

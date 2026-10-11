@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name" translatable="false">AgendApp</string>
+
+    <!-- Files -->
+    <string name="saved_to">Saved to Downloads/AgendApp</string>
+    <string name="save_failed">Could not save the file</string>
+    <string name="share_title">Share</string>
+    <string name="choose_file">Choose a file</string>
+    <string name="copied">Copied</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="camera_denied">Allow the camera in the settings to scan a QR code</string>
+
+    <!-- Phone calendar -->
+    <string name="calendar_denied">Allow calendar access in AgendApp\'s settings to send your events</string>
+    <string name="calendar_failed">Calendar error: %1$s</string>
+    <string name="calendar_none">No writable calendar on this phone. Add a Google account in Android settings.</string>
+    <string name="calendar_refused">The calendar refused the event.</string>
+    <string name="calendar_bad_date">Invalid date: %1$s</string>
+    <string name="calendar_default_name">Calendar</string>
+    <string name="calendar_on_phone">%1$s · on this phone</string>
+    <plurals name="calendar_deleted">
+        <item quantity="one">%d event removed from the calendar</item>
+        <item quantity="other">%d events removed from the calendar</item>
+    </plurals>
+
+    <!-- Widgets -->
+    <string name="w_list_name">Upcoming events</string>
+    <string name="w_list_desc">Your next events, with names</string>
+    <string name="w_list_title">Upcoming</string>
+    <string name="w_calendar_name">AgendApp calendar</string>
+    <string name="w_calendar_desc">Week, month or the next few days</string>
+    <string name="w_actions_name">AgendApp quick actions</string>
+    <string name="w_actions_desc">New event, send to calendar, backup</string>
+    <string name="w_empty">Nothing planned</string>
+    <string name="w_new">New event</string>
+    <string name="w_sync">Send</string>
+    <string name="w_plan">Schedule</string>
+    <string name="w_backup">Back up</string>
+    <string name="w_prev">Previous</string>
+    <string name="w_next">Next</string>
+    <string name="w_today">Today</string>
+    <string name="w_over_days">Over %1$d days</string>
+    <plurals name="w_events_over_days">
+        <item quantity="one">%1$d event · %2$d days</item>
+        <item quantity="other">%1$d events · %2$d days</item>
+    </plurals>
+    <string name="w_all_day">All day</string>
+    <string name="w_all_day_until">All day · %1$d days, until %2$s</string>
+    <string name="w_this_week">This week</string>
+    <string name="w_week_of">Week of %1$s</string>
+    <string name="w_next_days">Next %1$d days</string>
+    <string name="w_today_label">Today · %1$s</string>
+    <string name="w_tomorrow_label">Tomorrow · %1$s</string>
+
+    <!-- Launcher shortcuts -->
+    <string name="sc_new_s">New event</string>
+    <string name="sc_new_l">Create an event today</string>
+    <string name="sc_plan_s">Schedule</string>
+    <string name="sc_plan_l">Open the schedule</string>
+    <string name="sc_sync_s">Send</string>
+    <string name="sc_sync_l">Send to the calendar</string>
+    <string name="sc_backup_s">Back up</string>
+    <string name="sc_backup_l">Back up now</string>
+
+    <!-- Backup and app lock -->
+    <string name="backup_done">Backup saved</string>
+    <string name="backup_failed">Backup failed: %1$s</string>
+    <string name="backup_no_data">open AgendApp once to prepare the backup</string>
+    <string name="backup_folder_lost">folder unavailable, choose it again</string>
+    <string name="backup_write_refused">writing refused</string>
+    <string name="backup_create_failed">could not create the file</string>
+    <string name="lock_title">Unlock AgendApp</string>
+    <string name="lock_subtitle">Your schedules are protected</string>
+    <string name="lock_button">Unlock</string>
+    <string name="lock_enable_title">Turn on the app lock</string>
+    <string name="lock_disable_title">Turn off the app lock</string>
+    <string name="lock_unavailable">No screen lock is set up on this phone.</string>
+    <string name="lock_no_hardware">This phone does not support authentication.</string>
+    <string name="w_pin_unsupported">Add the widget from the home screen: long press › Widgets › AgendApp</string>
+    <string name="watch_sent">Events sent to the watch</string>
+</resources>

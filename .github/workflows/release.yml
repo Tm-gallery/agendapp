@@ -1,0 +1,60 @@
+# Publishes a release when a version tag is pushed (for example v1.2.0): the desktop file and the
+# phone and watch APKs, signed with the key stored in the repository secrets:
+#   AGENDAPP_KEYSTORE_BASE64    the .p12 key file, base64-encoded
+#   AGENDAPP_KEYSTORE_PASSWORD  its password
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      AGENDAPP_VERSION: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Web build
+        working-directory: web
+        run: |
+          npm ci
+          npm run check:i18n
+          npm run build
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+
+      - name: Signed Android builds
+        working-directory: android
+        env:
+          AGENDAPP_KEYSTORE_PASSWORD: ${{ secrets.AGENDAPP_KEYSTORE_PASSWORD }}
+        run: |
+          echo "${{ secrets.AGENDAPP_KEYSTORE_BASE64 }}" | base64 -d > "$RUNNER_TEMP/release.p12"
+          export AGENDAPP_KEYSTORE="$RUNNER_TEMP/release.p12"
+          ./gradlew assembleRelease --no-daemon
+          rm -f "$RUNNER_TEMP/release.p12"
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          mkdir out
+          cp web/dist/AgendApp.html out/AgendApp.html
+          cp android/app/build/outputs/apk/release/app-release.apk "out/AgendApp-$version.apk"
+          cp android/wear/build/outputs/apk/release/wear-release.apk "out/AgendApp-wear-$version.apk"
+          gh release create "$GITHUB_REF_NAME" out/* --title "AgendApp $version" --generate-notes

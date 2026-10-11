@@ -1,0 +1,70 @@
+<resources>
+    <string name="tile_description">Événement en cours ou prochain événement</string>
+    <string name="complication_label">Prochain événement</string>
+
+    <!-- Dates et heures -->
+    <string name="today">Aujourd\'hui</string>
+    <string name="tomorrow">Demain</string>
+    <string name="yesterday">Hier</string>
+    <string name="all_day">Journée entière</string>
+    <string name="all_day_short">Journée</string>
+    <string name="until">Jusqu\'au %1$s</string>
+    <string name="duration_min">%1$d min</string>
+    <string name="duration_h">%1$d h</string>
+    <string name="duration_hm">%1$d h %2$02d</string>
+    <string name="rel_ongoing">En cours</string>
+    <string name="rel_ended">Terminé</string>
+    <string name="rel_now">Maintenant</string>
+    <string name="rel_in_min">Dans %1$d min</string>
+    <string name="rel_in">Dans %1$s</string>
+    <string name="rel_in_days">Dans %1$d j</string>
+    <string name="ago_never">jamais</string>
+    <string name="ago_now">à l\'instant</string>
+    <string name="ago_min">il y a %1$d min</string>
+    <string name="ago_h">il y a %1$d h</string>
+    <string name="ago_d">il y a %1$d j</string>
+
+    <!-- Tuile et complication -->
+    <string name="ongoing">En cours</string>
+    <string name="open_phone_app">Ouvre AgendApp\nsur le téléphone</string>
+    <string name="nothing_planned">Rien de prévu</string>
+    <string name="then_next">Puis %1$s · %2$s</string>
+    <string name="tile_button">Agenda</string>
+    <string name="free">Libre</string>
+    <string name="no_upcoming">Aucun événement à venir</string>
+    <string name="ongoing_ends">En cours · fin %1$s</string>
+
+    <!-- Écrans de l'app -->
+    <string name="calendar">Calendrier</string>
+    <string name="ongoing_until">En cours · jusqu\'à %1$s</string>
+    <string name="time_left">Reste %1$s</string>
+    <string name="nothing_received">Aucun événement reçu. Ouvre AgendApp sur le téléphone, puis synchronise.</string>
+    <string name="sync">Synchroniser</string>
+    <string name="nothing_in_days">Rien de prévu sur %1$d jours</string>
+    <string name="month_summary">Bilan · %1$s</string>
+    <plurals name="nights">
+        <item quantity="one">%d nuit</item>
+        <item quantity="many">%d nuits</item>
+        <item quantity="other">%d nuits</item>
+    </plurals>
+    <string name="days_off">%1$d j hors service</string>
+    <string name="settings">Réglages</string>
+    <string name="received">Reçu %1$s</string>
+    <string name="event_missing">Événement introuvable (supprimé sur le téléphone ?)</string>
+    <string name="open_on_phone">Voir sur le téléphone</string>
+    <string name="phone_unreachable">Téléphone injoignable</string>
+    <string name="on_phone">Sur le téléphone</string>
+    <string name="prev_day">Jour précédent</string>
+    <string name="next_day">Jour suivant</string>
+    <string name="prev_month">Mois précédent</string>
+    <string name="next_month">Mois suivant</string>
+    <string name="worked">%1$s de service</string>
+    <string name="request_sending">Demande envoyée…</string>
+    <string name="request_sent">Demande envoyée</string>
+    <string name="phone_colors">Couleurs du téléphone</string>
+    <string name="hide_names">Masquer les noms</string>
+    <string name="codes_only">Codes seulement</string>
+    <string name="period_shown">Période affichée</string>
+    <string name="n_days">%1$d jours</string>
+    <string name="settings_note">%1$d événements reçus de « %2$s ». Données envoyées par le téléphone à chaque modification : la montre ne fait rien en arrière-plan.</string>
+</resources>

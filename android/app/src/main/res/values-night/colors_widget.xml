@@ -1,0 +1,15 @@
+<resources>
+    <color name="w_bg">#121318</color>
+    <color name="w_surface">#1E1F25</color>
+    <color name="w_surface_high">#292A2F</color>
+    <color name="w_on">#E3E1E9</color>
+    <color name="w_on_var">#C6C5D0</color>
+    <color name="w_outline">#45464F</color>
+    <color name="w_primary">#B8C3FF</color>
+    <color name="w_on_primary">#002388</color>
+    <color name="w_primary_container">#0034BE</color>
+    <color name="w_on_primary_container">#DDE1FF</color>
+    <color name="w_secondary_container">#424659</color>
+    <color name="w_on_secondary_container">#DFE1F9</color>
+    <color name="w_tertiary">#E4BAD9</color>
+</resources>

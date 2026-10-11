@@ -1,0 +1,45 @@
+# Checks every push and pull request: translations, web build, Android debug builds.
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Web build
+        working-directory: web
+        run: |
+          npm ci
+          npm run check:i18n
+          npm run build
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+
+      - name: Android debug build
+        working-directory: android
+        run: ./gradlew assembleDebug --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agendapp-debug
+          path: |
+            web/dist/AgendApp.html
+            android/app/build/outputs/apk/debug/app-debug.apk
+            android/wear/build/outputs/apk/debug/wear-debug.apk
+          retention-days: 14

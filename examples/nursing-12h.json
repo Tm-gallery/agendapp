@@ -1,0 +1,1787 @@
+{
+ "v": 1,
+ "rev": 1789387200070,
+ "settings": {
+  "calName": "Hospital",
+  "tz": "floating",
+  "lang": "auto",
+  "theme": "auto",
+  "exportGrouping": "perColor",
+  "allDayEndExclusive": true,
+  "gcalCalendarId": "",
+  "haptics": true
+ },
+ "groups": [
+  {
+   "id": "g_d",
+   "name": "Day"
+  },
+  {
+   "id": "g_n",
+   "name": "Night"
+  }
+ ],
+ "slots": [
+  {
+   "id": "s_d",
+   "name": "Day",
+   "code": "D",
+   "start": "07:00",
+   "end": "19:00",
+   "groupId": "g_d"
+  },
+  {
+   "id": "s_n",
+   "name": "Night",
+   "code": "N",
+   "start": "19:00",
+   "end": "07:00",
+   "groupId": "g_n"
+  }
+ ],
+ "fields": [
+  {
+   "id": "f_buddy",
+   "key": "buddy",
+   "label": "Partner",
+   "kind": "person",
+   "sticky": false
+  },
+  {
+   "id": "f_team",
+   "key": "team",
+   "label": "Team",
+   "kind": "people",
+   "sticky": true
+  },
+  {
+   "id": "f_charge",
+   "key": "charge",
+   "label": "Charge nurse",
+   "kind": "person",
+   "sticky": true
+  },
+  {
+   "id": "f_unit",
+   "key": "unit",
+   "label": "Unit",
+   "kind": "text",
+   "sticky": false
+  }
+ ],
+ "types": [
+  {
+   "alarms": [
+    60
+   ],
+   "days": 1,
+   "snapWeek": false,
+   "times": {},
+   "location": "",
+   "descTpl": "",
+   "id": "t_shift",
+   "name": "Shift",
+   "code": "G",
+   "color": "7",
+   "kind": "slot",
+   "slotIds": [
+    "s_d",
+    "s_n"
+   ],
+   "fields": [
+    {
+     "fieldId": "f_buddy",
+     "slotIds": null,
+     "required": false
+    },
+    {
+     "fieldId": "f_team",
+     "slotIds": null,
+     "required": false
+    },
+    {
+     "fieldId": "f_charge",
+     "slotIds": null,
+     "required": false
+    },
+    {
+     "fieldId": "f_unit",
+     "slotIds": null,
+     "required": false
+    }
+   ],
+   "titleTpl": "{type} {slotCode}[ · {unit}]"
+  },
+  {
+   "alarms": [],
+   "days": 1,
+   "snapWeek": false,
+   "times": {},
+   "location": "",
+   "descTpl": "",
+   "id": "t_rest",
+   "name": "Rest",
+   "code": "R",
+   "color": "8",
+   "kind": "allday",
+   "slotIds": [],
+   "fields": [],
+   "titleTpl": "{type}"
+  },
+  {
+   "alarms": [],
+   "days": 7,
+   "snapWeek": true,
+   "times": {},
+   "location": "",
+   "descTpl": "",
+   "id": "t_leave",
+   "name": "Leave",
+   "code": "AL",
+   "color": "5",
+   "kind": "allday",
+   "slotIds": [],
+   "fields": [],
+   "titleTpl": "{type}"
+  },
+  {
+   "alarms": [],
+   "days": 1,
+   "snapWeek": false,
+   "times": {},
+   "location": "",
+   "descTpl": "",
+   "id": "t_training",
+   "name": "Training",
+   "code": "TRN",
+   "color": "3",
+   "kind": "allday",
+   "slotIds": [],
+   "fields": [],
+   "titleTpl": "{type}"
+  }
+ ],
+ "rules": [
+  {
+   "id": "r_1",
+   "kind": "propose",
+   "enabled": true,
+   "name": "After a night: rest the next day",
+   "when": {
+    "typeIds": [
+     "t_shift"
+    ],
+    "slotIds": [
+     "s_n"
+    ]
+   },
+   "then": {
+    "typeId": "t_rest",
+    "slotId": "same",
+    "dayOffset": 1,
+    "copy": "none",
+    "clear": [],
+    "set": {},
+    "mode": "suggest"
+   }
+  }
+ ],
+ "events": [
+  {
+   "values": {
+    "f_buddy": [
+     "Louis T."
+    ],
+    "f_team": [
+     "Adam E.",
+     "Manon S.",
+     "Louis T."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvegg5m1",
+   "typeId": "t_shift",
+   "createdAt": 1789387200000,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-14"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Chloé P."
+    ],
+    "f_team": [
+     "Emma J.",
+     "Lucas D.",
+     "Camille R."
+    ],
+    "f_charge": [
+     "Hugo M."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvf2f0d2",
+   "typeId": "t_shift",
+   "createdAt": 1789387200001,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-15"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Manon S."
+    ],
+    "f_team": [
+     "Sarah K.",
+     "Nathan G.",
+     "Jade C."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvfam3d3",
+   "typeId": "t_shift",
+   "createdAt": 1789387200002,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-09-16"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Adam E."
+    ],
+    "f_team": [
+     "Théo L.",
+     "Louis T.",
+     "Nathan G."
+    ],
+    "f_charge": [
+     "Hugo M."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvfxblv4",
+   "typeId": "t_shift",
+   "createdAt": 1789387200003,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-09-17"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvfmot15",
+   "typeId": "t_rest",
+   "createdAt": 1789387200004,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-18"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvfqc5d6",
+   "typeId": "t_rest",
+   "createdAt": 1789387200005,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-19"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvf2zt47",
+   "typeId": "t_rest",
+   "createdAt": 1789387200006,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-20"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Lucas D."
+    ],
+    "f_team": [
+     "Chloé P.",
+     "Camille R.",
+     "Nathan G."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgrpzt8",
+   "typeId": "t_shift",
+   "createdAt": 1789387200007,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-21"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Inès B."
+    ],
+    "f_team": [
+     "Jade C.",
+     "Théo L.",
+     "Adam E."
+    ],
+    "f_charge": [
+     "Hugo M."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgjkdc9",
+   "typeId": "t_shift",
+   "createdAt": 1789387200008,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-22"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Emma J."
+    ],
+    "f_team": [
+     "Noah A.",
+     "Jade C.",
+     "Camille R."
+    ],
+    "f_charge": [
+     "Hugo M."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgivwpa",
+   "typeId": "t_shift",
+   "createdAt": 1789387200009,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-09-23"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Inès B."
+    ],
+    "f_team": [
+     "Enzo V.",
+     "Noah A.",
+     "Emma J."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvg89ldb",
+   "typeId": "t_shift",
+   "createdAt": 1789387200010,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-09-24"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvghpwpc",
+   "typeId": "t_rest",
+   "createdAt": 1789387200011,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-25"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgf5znd",
+   "typeId": "t_rest",
+   "createdAt": 1789387200012,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-26"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgmy34e",
+   "typeId": "t_rest",
+   "createdAt": 1789387200013,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-27"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Emma J."
+    ],
+    "f_team": [
+     "Tom N.",
+     "Louis T.",
+     "Léa F."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgvp3lf",
+   "typeId": "t_shift",
+   "createdAt": 1789387200014,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-28"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Tom N."
+    ],
+    "f_team": [
+     "Zoé H.",
+     "Manon S.",
+     "Hugo M."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgpwyfg",
+   "typeId": "t_shift",
+   "createdAt": 1789387200015,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-29"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Lucas D."
+    ],
+    "f_team": [
+     "Noah A.",
+     "Jade C.",
+     "Chloé P."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgbzgrh",
+   "typeId": "t_shift",
+   "createdAt": 1789387200016,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-09-30"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Nathan G."
+    ],
+    "f_team": [
+     "Chloé P.",
+     "Jade C.",
+     "Adam E."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgtj3ri",
+   "typeId": "t_shift",
+   "createdAt": 1789387200017,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-10-01"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvg057sj",
+   "typeId": "t_rest",
+   "createdAt": 1789387200018,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-02"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgx5jpk",
+   "typeId": "t_rest",
+   "createdAt": 1789387200019,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-03"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgbyqwl",
+   "typeId": "t_rest",
+   "createdAt": 1789387200020,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-04"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Jade C."
+    ],
+    "f_team": [
+     "Léa F.",
+     "Noah A.",
+     "Manon S."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgyyn4m",
+   "typeId": "t_shift",
+   "createdAt": 1789387200021,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-05"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Louis T."
+    ],
+    "f_team": [
+     "Enzo V.",
+     "Noah A.",
+     "Hugo M."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgnlgcn",
+   "typeId": "t_shift",
+   "createdAt": 1789387200022,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-06"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Inès B."
+    ],
+    "f_team": [
+     "Nathan G.",
+     "Hugo M.",
+     "Noah A."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgi561o",
+   "typeId": "t_shift",
+   "createdAt": 1789387200023,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-10-07"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Enzo V."
+    ],
+    "f_team": [
+     "Hugo M.",
+     "Inès B.",
+     "Léa F."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvg8uavp",
+   "typeId": "t_shift",
+   "createdAt": 1789387200024,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-10-08"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvglzx9q",
+   "typeId": "t_rest",
+   "createdAt": 1789387200025,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-09"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgbuowr",
+   "typeId": "t_rest",
+   "createdAt": 1789387200026,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-10"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgvlx4s",
+   "typeId": "t_rest",
+   "createdAt": 1789387200027,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-11"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Lucas D."
+    ],
+    "f_team": [
+     "Manon S.",
+     "Chloé P.",
+     "Jade C."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvg2vrct",
+   "typeId": "t_shift",
+   "createdAt": 1789387200028,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-12"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Emma J."
+    ],
+    "f_team": [
+     "Enzo V.",
+     "Louis T.",
+     "Inès B."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgl4zpu",
+   "typeId": "t_shift",
+   "createdAt": 1789387200029,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-13"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Léa F."
+    ],
+    "f_team": [
+     "Tom N.",
+     "Emma J.",
+     "Manon S."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgov4kv",
+   "typeId": "t_shift",
+   "createdAt": 1789387200030,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-10-14"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Noah A."
+    ],
+    "f_team": [
+     "Noah A.",
+     "Zoé H.",
+     "Adam E."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvguyu4w",
+   "typeId": "t_shift",
+   "createdAt": 1789387200031,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-10-15"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvg7x1yx",
+   "typeId": "t_rest",
+   "createdAt": 1789387200032,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-16"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgqyl1y",
+   "typeId": "t_rest",
+   "createdAt": 1789387200033,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-17"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgyrzoz",
+   "typeId": "t_rest",
+   "createdAt": 1789387200034,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-18"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Enzo V."
+    ],
+    "f_team": [
+     "Louis T.",
+     "Zoé H.",
+     "Tom N."
+    ],
+    "f_charge": [
+     "Hugo M."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvg48gl10",
+   "typeId": "t_shift",
+   "createdAt": 1789387200035,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-19"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Tom N."
+    ],
+    "f_team": [
+     "Lucas D.",
+     "Emma J.",
+     "Louis T."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvgwxtf11",
+   "typeId": "t_shift",
+   "createdAt": 1789387200036,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-20"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Léa F."
+    ],
+    "f_team": [
+     "Nathan G.",
+     "Louis T.",
+     "Zoé H."
+    ],
+    "f_charge": [
+     "Hugo M."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhkrbq12",
+   "typeId": "t_shift",
+   "createdAt": 1789387200037,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-10-21"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Zoé H."
+    ],
+    "f_team": [
+     "Chloé P.",
+     "Lucas D.",
+     "Emma J."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhusxr13",
+   "typeId": "t_shift",
+   "createdAt": 1789387200038,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-10-22"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvh4t6i14",
+   "typeId": "t_rest",
+   "createdAt": 1789387200039,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-23"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhy1ox15",
+   "typeId": "t_rest",
+   "createdAt": 1789387200040,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-24"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhu5ae16",
+   "typeId": "t_rest",
+   "createdAt": 1789387200041,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-25"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Inès B."
+    ],
+    "f_team": [
+     "Théo L.",
+     "Noah A.",
+     "Enzo V."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhgx6c17",
+   "typeId": "t_shift",
+   "createdAt": 1789387200042,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-26"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Léa F."
+    ],
+    "f_team": [
+     "Lucas D.",
+     "Enzo V.",
+     "Emma J."
+    ],
+    "f_charge": [
+     "Hugo M."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvh9s7o18",
+   "typeId": "t_shift",
+   "createdAt": 1789387200043,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-27"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Tom N."
+    ],
+    "f_team": [
+     "Jade C.",
+     "Chloé P.",
+     "Lucas D."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvh02j719",
+   "typeId": "t_shift",
+   "createdAt": 1789387200044,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-10-28"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Chloé P."
+    ],
+    "f_team": [
+     "Léa F.",
+     "Nathan G.",
+     "Inès B."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvh53nm1a",
+   "typeId": "t_shift",
+   "createdAt": 1789387200045,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-10-29"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhpp0y1b",
+   "typeId": "t_rest",
+   "createdAt": 1789387200046,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-30"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhg5911c",
+   "typeId": "t_rest",
+   "createdAt": 1789387200047,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-31"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhzbyr1d",
+   "typeId": "t_rest",
+   "createdAt": 1789387200048,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-01"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Manon S."
+    ],
+    "f_team": [
+     "Emma J.",
+     "Sarah K.",
+     "Adam E."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhpmu91e",
+   "typeId": "t_shift",
+   "createdAt": 1789387200049,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-02"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Camille R."
+    ],
+    "f_team": [
+     "Léa F.",
+     "Louis T.",
+     "Hugo M."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhcw4q1f",
+   "typeId": "t_shift",
+   "createdAt": 1789387200050,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-03"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Louis T."
+    ],
+    "f_team": [
+     "Zoé H.",
+     "Théo L.",
+     "Léa F."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhf41b1g",
+   "typeId": "t_shift",
+   "createdAt": 1789387200051,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-11-04"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Théo L."
+    ],
+    "f_team": [
+     "Inès B.",
+     "Camille R.",
+     "Emma J."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvh6dfb1h",
+   "typeId": "t_shift",
+   "createdAt": 1789387200052,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-11-05"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvh0j6h1i",
+   "typeId": "t_rest",
+   "createdAt": 1789387200053,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-06"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhlz0y1j",
+   "typeId": "t_rest",
+   "createdAt": 1789387200054,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-07"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhxb831k",
+   "typeId": "t_rest",
+   "createdAt": 1789387200055,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-08"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Chloé P."
+    ],
+    "f_team": [
+     "Inès B.",
+     "Hugo M.",
+     "Adam E."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhud7w1l",
+   "typeId": "t_shift",
+   "createdAt": 1789387200056,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-09"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Lucas D."
+    ],
+    "f_team": [
+     "Louis T.",
+     "Adam E.",
+     "Enzo V."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhjhrn1m",
+   "typeId": "t_shift",
+   "createdAt": 1789387200057,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-10"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Hugo M."
+    ],
+    "f_team": [
+     "Camille R.",
+     "Manon S.",
+     "Sarah K."
+    ],
+    "f_charge": [
+     "Inès B."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhssxi1n",
+   "typeId": "t_shift",
+   "createdAt": 1789387200058,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-11-11"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Manon S."
+    ],
+    "f_team": [
+     "Jade C.",
+     "Emma J.",
+     "Inès B."
+    ],
+    "f_charge": [
+     "Hugo M."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhck351o",
+   "typeId": "t_shift",
+   "createdAt": 1789387200059,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-11-12"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhexpx1p",
+   "typeId": "t_rest",
+   "createdAt": 1789387200060,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-13"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhaevi1q",
+   "typeId": "t_rest",
+   "createdAt": 1789387200061,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-14"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvh528o1r",
+   "typeId": "t_rest",
+   "createdAt": 1789387200062,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-15"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Lucas D."
+    ],
+    "f_team": [
+     "Enzo V.",
+     "Jade C.",
+     "Hugo M."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "ICU"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvh02xv1s",
+   "typeId": "t_shift",
+   "createdAt": 1789387200063,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-16"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Emma J."
+    ],
+    "f_team": [
+     "Lucas D.",
+     "Enzo V.",
+     "Emma J."
+    ],
+    "f_charge": [
+     "Camille R."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhf5kt1t",
+   "typeId": "t_shift",
+   "createdAt": 1789387200064,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-17"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Théo L."
+    ],
+    "f_team": [
+     "Nathan G.",
+     "Noah A.",
+     "Chloé P."
+    ],
+    "f_charge": [
+     "Hugo M."
+    ],
+    "f_unit": "Emergency"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhf34l1u",
+   "typeId": "t_shift",
+   "createdAt": 1789387200065,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-11-18"
+  },
+  {
+   "values": {
+    "f_buddy": [
+     "Inès B."
+    ],
+    "f_team": [
+     "Léa F.",
+     "Théo L.",
+     "Louis T."
+    ],
+    "f_charge": [
+     "Hugo M."
+    ],
+    "f_unit": "Cardiology"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvha7tq1v",
+   "typeId": "t_shift",
+   "createdAt": 1789387200066,
+   "origin": "manual",
+   "slotId": "s_n",
+   "date": "2026-11-19"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhsqs61w",
+   "typeId": "t_rest",
+   "createdAt": 1789387200067,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-20"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhppmw1x",
+   "typeId": "t_rest",
+   "createdAt": 1789387200068,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-21"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvhtf181y",
+   "typeId": "t_rest",
+   "createdAt": 1789387200069,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-22"
+  }
+ ],
+ "people": {
+  "Camille R.": {
+   "n": 19,
+   "t": 1791721827197
+  },
+  "Hugo M.": {
+   "n": 18,
+   "t": 1791721827197
+  },
+  "Inès B.": {
+   "n": 28,
+   "t": 1791721827197
+  },
+  "Lucas D.": {
+   "n": 11,
+   "t": 1791721827197
+  },
+  "Léa F.": {
+   "n": 10,
+   "t": 1791721827197
+  },
+  "Nathan G.": {
+   "n": 8,
+   "t": 1791721827197
+  },
+  "Chloé P.": {
+   "n": 10,
+   "t": 1791721827197
+  },
+  "Théo L.": {
+   "n": 7,
+   "t": 1791721827197
+  },
+  "Manon S.": {
+   "n": 9,
+   "t": 1791721827197
+  },
+  "Enzo V.": {
+   "n": 10,
+   "t": 1791721827197
+  },
+  "Jade C.": {
+   "n": 10,
+   "t": 1791721827197
+  },
+  "Louis T.": {
+   "n": 13,
+   "t": 1791721827197
+  },
+  "Sarah K.": {
+   "n": 3,
+   "t": 1791721827197
+  },
+  "Noah A.": {
+   "n": 10,
+   "t": 1791721827197
+  },
+  "Emma J.": {
+   "n": 14,
+   "t": 1791721827197
+  },
+  "Tom N.": {
+   "n": 6,
+   "t": 1791721827197
+  },
+  "Zoé H.": {
+   "n": 6,
+   "t": 1791721827197
+  },
+  "Adam E.": {
+   "n": 8,
+   "t": 1791721827197
+  }
+ },
+ "usage": {
+  "t_shift|s_d": {
+   "n": 20,
+   "t": 1791721827197
+  },
+  "t_shift|s_n": {
+   "n": 20,
+   "t": 1791721827197
+  },
+  "t_rest|": {
+   "n": 30,
+   "t": 1791721827197
+  }
+ },
+ "gone": {},
+ "stats": {
+  "types": {
+   "t_shift": {
+    "pause": 30
+   }
+  }
+ }
+}

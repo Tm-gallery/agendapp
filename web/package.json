@@ -1,0 +1,26 @@
+{
+  "name": "agendapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AgendApp: a calendar generator for recurring schedules (web, Android, Wear OS)",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:web": "node build.mjs --web",
+    "examples": "node scripts/examples.mjs",
+    "screenshots": "node scripts/screenshots.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs"
+  },
+  "dependencies": {
+    "@material/material-color-utilities": "0.3.0",
+    "jsqr": "1.4.0",
+    "preact": "10.24.3",
+    "qrcode-generator": "1.4.4"
+  },
+  "devDependencies": {
+    "@material-symbols/svg-400": "0.48.0",
+    "esbuild": "0.24.0",
+    "svgpath": "2.6.0"
+  }
+}

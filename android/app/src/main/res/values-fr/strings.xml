@@ -1,0 +1,82 @@
+<resources>
+    <!-- Fichiers -->
+    <string name="saved_to">Enregistré dans Téléchargements/AgendApp</string>
+    <string name="save_failed">Échec de l\'enregistrement</string>
+    <string name="share_title">Partager</string>
+    <string name="choose_file">Choisir un fichier</string>
+    <string name="copied">Copié</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="camera_denied">Autorise l\'appareil photo dans les réglages pour scanner un QR code</string>
+
+    <!-- Agenda du téléphone -->
+    <string name="calendar_denied">Autorise l\'accès à l\'agenda dans les paramètres d\'AgendApp pour envoyer tes événements</string>
+    <string name="calendar_failed">Erreur de l\'agenda : %1$s</string>
+    <string name="calendar_none">Aucun agenda modifiable sur ce téléphone. Ajoute un compte Google dans les paramètres Android.</string>
+    <string name="calendar_refused">L\'agenda a refusé l\'événement.</string>
+    <string name="calendar_bad_date">Date invalide : %1$s</string>
+    <string name="calendar_default_name">Agenda</string>
+    <string name="calendar_on_phone">%1$s · sur le téléphone</string>
+    <plurals name="calendar_deleted">
+        <item quantity="one">%d événement retiré de l\'agenda</item>
+        <item quantity="many">%d événements retirés de l\'agenda</item>
+        <item quantity="other">%d événements retirés de l\'agenda</item>
+    </plurals>
+
+    <!-- Widgets -->
+    <string name="w_list_name">Prochains événements</string>
+    <string name="w_list_desc">Tes prochains événements, avec les noms</string>
+    <string name="w_list_title">À venir</string>
+    <string name="w_calendar_name">Calendrier AgendApp</string>
+    <string name="w_calendar_desc">Semaine, mois ou prochains jours</string>
+    <string name="w_actions_name">Accès rapide AgendApp</string>
+    <string name="w_actions_desc">Nouvel événement, envoi vers l\'agenda, sauvegarde</string>
+    <string name="w_empty">Rien de prévu</string>
+    <string name="w_new">Nouvel événement</string>
+    <string name="w_sync">Envoyer</string>
+    <string name="w_plan">Planning</string>
+    <string name="w_backup">Sauvegarder</string>
+    <string name="w_prev">Précédent</string>
+    <string name="w_next">Suivant</string>
+    <string name="w_today">Aujourd\'hui</string>
+    <string name="w_over_days">Sur %1$d jours</string>
+    <plurals name="w_events_over_days">
+        <item quantity="one">%1$d événement · %2$d jours</item>
+        <item quantity="many">%1$d événements · %2$d jours</item>
+        <item quantity="other">%1$d événements · %2$d jours</item>
+    </plurals>
+    <string name="w_all_day">Journée entière</string>
+    <string name="w_all_day_until">Journée entière · %1$d jours, jusqu\'au %2$s</string>
+    <string name="w_this_week">Cette semaine</string>
+    <string name="w_week_of">Semaine du %1$s</string>
+    <string name="w_next_days">%1$d prochains jours</string>
+    <string name="w_today_label">Aujourd\'hui · %1$s</string>
+    <string name="w_tomorrow_label">Demain · %1$s</string>
+
+    <!-- Raccourcis -->
+    <string name="sc_new_s">Nouvel événement</string>
+    <string name="sc_new_l">Créer un événement aujourd\'hui</string>
+    <string name="sc_plan_s">Planning</string>
+    <string name="sc_plan_l">Ouvrir le planning</string>
+    <string name="sc_sync_s">Envoyer</string>
+    <string name="sc_sync_l">Envoyer vers l\'agenda</string>
+    <string name="sc_backup_s">Sauvegarder</string>
+    <string name="sc_backup_l">Sauvegarder maintenant</string>
+
+    <!-- Sauvegarde, verrouillage -->
+    <string name="backup_done">Sauvegarde enregistrée</string>
+    <string name="backup_failed">Échec de la sauvegarde : %1$s</string>
+    <string name="backup_no_data">ouvre AgendApp une fois pour préparer la sauvegarde</string>
+    <string name="backup_folder_lost">dossier inaccessible, choisis-le à nouveau</string>
+    <string name="backup_write_refused">écriture refusée</string>
+    <string name="backup_create_failed">création du fichier impossible</string>
+    <string name="lock_title">Déverrouiller AgendApp</string>
+    <string name="lock_subtitle">Tes plannings sont protégés</string>
+    <string name="lock_button">Déverrouiller</string>
+    <string name="lock_enable_title">Activer le verrouillage</string>
+    <string name="lock_disable_title">Désactiver le verrouillage</string>
+    <string name="lock_unavailable">Aucun verrouillage d\'écran n\'est configuré sur ce téléphone.</string>
+    <string name="lock_no_hardware">Ce téléphone ne permet pas l\'authentification.</string>
+    <string name="w_pin_unsupported">Ajoute le widget depuis l\'écran d\'accueil : appui long › Widgets › AgendApp</string>
+    <string name="watch_sent">Événements envoyés à la montre</string>
+</resources>

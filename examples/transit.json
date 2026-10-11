@@ -1,0 +1,1945 @@
+{
+ "v": 1,
+ "rev": 1789387200094,
+ "settings": {
+  "calName": "Transit",
+  "tz": "floating",
+  "lang": "auto",
+  "theme": "auto",
+  "exportGrouping": "perColor",
+  "allDayEndExclusive": true,
+  "gcalCalendarId": "",
+  "haptics": true
+ },
+ "groups": [
+  {
+   "id": "g",
+   "name": "Day"
+  }
+ ],
+ "slots": [
+  {
+   "id": "s_m",
+   "name": "Morning",
+   "code": "M",
+   "start": "05:45",
+   "end": "10:15",
+   "groupId": "g"
+  },
+  {
+   "id": "s_e",
+   "name": "Evening",
+   "code": "E",
+   "start": "16:00",
+   "end": "20:30",
+   "groupId": "g"
+  },
+  {
+   "id": "s_d",
+   "name": "Day",
+   "code": "D",
+   "start": "08:30",
+   "end": "16:30",
+   "groupId": "g"
+  }
+ ],
+ "fields": [
+  {
+   "id": "f_line",
+   "key": "line",
+   "label": "Line",
+   "kind": "text",
+   "sticky": false
+  },
+  {
+   "id": "f_vehicle",
+   "key": "vehicle",
+   "label": "Vehicle",
+   "kind": "text",
+   "sticky": false
+  },
+  {
+   "id": "f_relief",
+   "key": "relief",
+   "label": "Relief",
+   "kind": "person",
+   "sticky": false
+  }
+ ],
+ "types": [
+  {
+   "alarms": [
+    45
+   ],
+   "days": 1,
+   "snapWeek": false,
+   "times": {},
+   "location": "",
+   "descTpl": "",
+   "id": "t_service",
+   "name": "Service",
+   "code": "SV",
+   "color": "7",
+   "kind": "slot",
+   "slotIds": [
+    "s_m",
+    "s_e",
+    "s_d"
+   ],
+   "fields": [
+    {
+     "fieldId": "f_line",
+     "slotIds": null,
+     "required": false
+    },
+    {
+     "fieldId": "f_vehicle",
+     "slotIds": null,
+     "required": false
+    },
+    {
+     "fieldId": "f_relief",
+     "slotIds": null,
+     "required": false
+    }
+   ],
+   "titleTpl": "Line {line} {slotCode}"
+  },
+  {
+   "alarms": [],
+   "days": 1,
+   "snapWeek": false,
+   "times": {},
+   "location": "",
+   "descTpl": "",
+   "id": "t_standby",
+   "name": "Standby",
+   "code": "SB",
+   "color": "1",
+   "kind": "slot",
+   "slotIds": [
+    "s_d"
+   ],
+   "fields": [],
+   "titleTpl": "{type}"
+  },
+  {
+   "alarms": [],
+   "days": 1,
+   "snapWeek": false,
+   "times": {},
+   "location": "",
+   "descTpl": "",
+   "id": "t_rest",
+   "name": "Rest",
+   "code": "R",
+   "color": "8",
+   "kind": "allday",
+   "slotIds": [],
+   "fields": [],
+   "titleTpl": "{type}"
+  }
+ ],
+ "rules": [
+  {
+   "id": "r_1",
+   "kind": "propose",
+   "enabled": true,
+   "name": "Split shift: morning → evening",
+   "when": {
+    "typeIds": [
+     "t_service"
+    ],
+    "slotIds": [
+     "s_m"
+    ]
+   },
+   "then": {
+    "typeId": "t_service",
+    "slotId": "s_e",
+    "dayOffset": 0,
+    "copy": [
+     "f_line"
+    ],
+    "clear": [],
+    "set": {},
+    "mode": "suggest"
+   }
+  }
+ ],
+ "events": [
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "420",
+    "f_relief": [
+     "Léa F."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvp2u0q72",
+   "typeId": "t_service",
+   "createdAt": 1789387200000,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-09-14"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "430",
+    "f_relief": [
+     "Nathan G."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvp8c3q73",
+   "typeId": "t_service",
+   "createdAt": 1789387200001,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-09-14"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "427",
+    "f_relief": [
+     "Léa F."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvprpy374",
+   "typeId": "t_service",
+   "createdAt": 1789387200002,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-15"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "420",
+    "f_relief": [
+     "Nathan G."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvprz5h75",
+   "typeId": "t_service",
+   "createdAt": 1789387200003,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-09-16"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "430",
+    "f_relief": [
+     "Léa F."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpr2y076",
+   "typeId": "t_service",
+   "createdAt": 1789387200004,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-09-16"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvp6s8a77",
+   "typeId": "t_standby",
+   "createdAt": 1789387200005,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-17"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvphp1u78",
+   "typeId": "t_rest",
+   "createdAt": 1789387200006,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-18"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvp57nx79",
+   "typeId": "t_rest",
+   "createdAt": 1789387200007,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-19"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "450",
+    "f_relief": [
+     "Sarah K."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpujx27a",
+   "typeId": "t_service",
+   "createdAt": 1789387200008,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-09-20"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "432",
+    "f_relief": [
+     "Zoé H."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvp8b0b7b",
+   "typeId": "t_service",
+   "createdAt": 1789387200009,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-09-20"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "445",
+    "f_relief": [
+     "Enzo V."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpqfcs7c",
+   "typeId": "t_service",
+   "createdAt": 1789387200010,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-21"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "457",
+    "f_relief": [
+     "Hugo M."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvppsgp7d",
+   "typeId": "t_service",
+   "createdAt": 1789387200011,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-09-22"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "427",
+    "f_relief": [
+     "Camille R."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpeqgr7e",
+   "typeId": "t_service",
+   "createdAt": 1789387200012,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-09-22"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvp93ng7f",
+   "typeId": "t_standby",
+   "createdAt": 1789387200013,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-23"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpbr6u7g",
+   "typeId": "t_rest",
+   "createdAt": 1789387200014,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-24"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpftfr7h",
+   "typeId": "t_rest",
+   "createdAt": 1789387200015,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-25"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "401",
+    "f_relief": [
+     "Léa F."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvp7sje7i",
+   "typeId": "t_service",
+   "createdAt": 1789387200016,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-09-26"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "432",
+    "f_relief": [
+     "Lucas D."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpbkdj7j",
+   "typeId": "t_service",
+   "createdAt": 1789387200017,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-09-26"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "424",
+    "f_relief": [
+     "Manon S."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpa5b97k",
+   "typeId": "t_service",
+   "createdAt": 1789387200018,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-27"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "446",
+    "f_relief": [
+     "Lucas D."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvps99o7l",
+   "typeId": "t_service",
+   "createdAt": 1789387200019,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-09-28"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "446",
+    "f_relief": [
+     "Sarah K."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpz3rj7m",
+   "typeId": "t_service",
+   "createdAt": 1789387200020,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-09-28"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpu5iw7n",
+   "typeId": "t_standby",
+   "createdAt": 1789387200021,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-09-29"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpm1187o",
+   "typeId": "t_rest",
+   "createdAt": 1789387200022,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-30"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpg4ql7p",
+   "typeId": "t_rest",
+   "createdAt": 1789387200023,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-01"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "417",
+    "f_relief": [
+     "Louis T."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvplw1i7q",
+   "typeId": "t_service",
+   "createdAt": 1789387200024,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-10-02"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "403",
+    "f_relief": [
+     "Zoé H."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvph5v57r",
+   "typeId": "t_service",
+   "createdAt": 1789387200025,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-10-02"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "412",
+    "f_relief": [
+     "Camille R."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpwnnn7s",
+   "typeId": "t_service",
+   "createdAt": 1789387200026,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-03"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "443",
+    "f_relief": [
+     "Zoé H."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpc3ze7t",
+   "typeId": "t_service",
+   "createdAt": 1789387200027,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-10-04"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "436",
+    "f_relief": [
+     "Sarah K."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvptwlz7u",
+   "typeId": "t_service",
+   "createdAt": 1789387200028,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-10-04"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvp92897v",
+   "typeId": "t_standby",
+   "createdAt": 1789387200029,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-05"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvpilsv7w",
+   "typeId": "t_rest",
+   "createdAt": 1789387200030,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-06"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqjj4g7x",
+   "typeId": "t_rest",
+   "createdAt": 1789387200031,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-07"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "406",
+    "f_relief": [
+     "Adam E."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqzhgh7y",
+   "typeId": "t_service",
+   "createdAt": 1789387200032,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-10-08"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "437",
+    "f_relief": [
+     "Hugo M."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq9suz7z",
+   "typeId": "t_service",
+   "createdAt": 1789387200033,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-10-08"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "417",
+    "f_relief": [
+     "Camille R."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqihh680",
+   "typeId": "t_service",
+   "createdAt": 1789387200034,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-09"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "404",
+    "f_relief": [
+     "Camille R."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqfapx81",
+   "typeId": "t_service",
+   "createdAt": 1789387200035,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-10-10"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "419",
+    "f_relief": [
+     "Nathan G."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqu3g682",
+   "typeId": "t_service",
+   "createdAt": 1789387200036,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-10-10"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqeei883",
+   "typeId": "t_standby",
+   "createdAt": 1789387200037,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-11"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq9s5x84",
+   "typeId": "t_rest",
+   "createdAt": 1789387200038,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-12"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqeiby85",
+   "typeId": "t_rest",
+   "createdAt": 1789387200039,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-13"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "413",
+    "f_relief": [
+     "Manon S."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqnf9g86",
+   "typeId": "t_service",
+   "createdAt": 1789387200040,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-10-14"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "403",
+    "f_relief": [
+     "Léa F."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq3fu087",
+   "typeId": "t_service",
+   "createdAt": 1789387200041,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-10-14"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "423",
+    "f_relief": [
+     "Sarah K."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqevir88",
+   "typeId": "t_service",
+   "createdAt": 1789387200042,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-15"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "416",
+    "f_relief": [
+     "Hugo M."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqn0f089",
+   "typeId": "t_service",
+   "createdAt": 1789387200043,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-10-16"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "407",
+    "f_relief": [
+     "Adam E."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqybrj8a",
+   "typeId": "t_service",
+   "createdAt": 1789387200044,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-10-16"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqwyam8b",
+   "typeId": "t_standby",
+   "createdAt": 1789387200045,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-17"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq4vnv8c",
+   "typeId": "t_rest",
+   "createdAt": 1789387200046,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-18"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq8mdt8d",
+   "typeId": "t_rest",
+   "createdAt": 1789387200047,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-19"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "402",
+    "f_relief": [
+     "Hugo M."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqojoq8e",
+   "typeId": "t_service",
+   "createdAt": 1789387200048,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-10-20"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "423",
+    "f_relief": [
+     "Emma J."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqzygt8f",
+   "typeId": "t_service",
+   "createdAt": 1789387200049,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-10-20"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "416",
+    "f_relief": [
+     "Adam E."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqa18p8g",
+   "typeId": "t_service",
+   "createdAt": 1789387200050,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-21"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "455",
+    "f_relief": [
+     "Nathan G."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqagah8h",
+   "typeId": "t_service",
+   "createdAt": 1789387200051,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-10-22"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "456",
+    "f_relief": [
+     "Chloé P."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqs8ky8i",
+   "typeId": "t_service",
+   "createdAt": 1789387200052,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-10-22"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqcu2t8j",
+   "typeId": "t_standby",
+   "createdAt": 1789387200053,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-23"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqd5138k",
+   "typeId": "t_rest",
+   "createdAt": 1789387200054,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-24"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq4nsd8l",
+   "typeId": "t_rest",
+   "createdAt": 1789387200055,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-25"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "433",
+    "f_relief": [
+     "Louis T."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqu2la8m",
+   "typeId": "t_service",
+   "createdAt": 1789387200056,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-10-26"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "414",
+    "f_relief": [
+     "Camille R."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqjqjv8n",
+   "typeId": "t_service",
+   "createdAt": 1789387200057,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-10-26"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "438",
+    "f_relief": [
+     "Léa F."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqaajs8o",
+   "typeId": "t_service",
+   "createdAt": 1789387200058,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-27"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "448",
+    "f_relief": [
+     "Nathan G."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqunan8p",
+   "typeId": "t_service",
+   "createdAt": 1789387200059,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-10-28"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "434",
+    "f_relief": [
+     "Nathan G."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqjafr8q",
+   "typeId": "t_service",
+   "createdAt": 1789387200060,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-10-28"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqsz578r",
+   "typeId": "t_standby",
+   "createdAt": 1789387200061,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-10-29"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq0cya8s",
+   "typeId": "t_rest",
+   "createdAt": 1789387200062,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-30"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqja2d8t",
+   "typeId": "t_rest",
+   "createdAt": 1789387200063,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-31"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "418",
+    "f_relief": [
+     "Chloé P."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqn1wa8u",
+   "typeId": "t_service",
+   "createdAt": 1789387200064,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-11-01"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "452",
+    "f_relief": [
+     "Sarah K."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqqacu8v",
+   "typeId": "t_service",
+   "createdAt": 1789387200065,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-11-01"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "405",
+    "f_relief": [
+     "Louis T."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqtzbt8w",
+   "typeId": "t_service",
+   "createdAt": 1789387200066,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-02"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "400",
+    "f_relief": [
+     "Emma J."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq17vq8x",
+   "typeId": "t_service",
+   "createdAt": 1789387200067,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-11-03"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "415",
+    "f_relief": [
+     "Hugo M."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq1alt8y",
+   "typeId": "t_service",
+   "createdAt": 1789387200068,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-11-03"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqqnnz8z",
+   "typeId": "t_standby",
+   "createdAt": 1789387200069,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-04"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq3c1l90",
+   "typeId": "t_rest",
+   "createdAt": 1789387200070,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-05"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqmh3891",
+   "typeId": "t_rest",
+   "createdAt": 1789387200071,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-06"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "457",
+    "f_relief": [
+     "Léa F."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqwq9b92",
+   "typeId": "t_service",
+   "createdAt": 1789387200072,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-11-07"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "444",
+    "f_relief": [
+     "Adam E."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqryox93",
+   "typeId": "t_service",
+   "createdAt": 1789387200073,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-11-07"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "446",
+    "f_relief": [
+     "Inès B."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqvc1b94",
+   "typeId": "t_service",
+   "createdAt": 1789387200074,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-08"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "459",
+    "f_relief": [
+     "Tom N."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqs6qx95",
+   "typeId": "t_service",
+   "createdAt": 1789387200075,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-11-09"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "427",
+    "f_relief": [
+     "Emma J."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq3eh996",
+   "typeId": "t_service",
+   "createdAt": 1789387200076,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-11-09"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq2tbo97",
+   "typeId": "t_standby",
+   "createdAt": 1789387200077,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-10"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqc4ce98",
+   "typeId": "t_rest",
+   "createdAt": 1789387200078,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-11"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqersn99",
+   "typeId": "t_rest",
+   "createdAt": 1789387200079,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-12"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "454",
+    "f_relief": [
+     "Louis T."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqfi7y9a",
+   "typeId": "t_service",
+   "createdAt": 1789387200080,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-11-13"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "439",
+    "f_relief": [
+     "Noah A."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq5k019b",
+   "typeId": "t_service",
+   "createdAt": 1789387200081,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-11-13"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "453",
+    "f_relief": [
+     "Emma J."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq5l5z9c",
+   "typeId": "t_service",
+   "createdAt": 1789387200082,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-14"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "449",
+    "f_relief": [
+     "Chloé P."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqw82n9d",
+   "typeId": "t_service",
+   "createdAt": 1789387200083,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-11-15"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "405",
+    "f_relief": [
+     "Léa F."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqzgpr9e",
+   "typeId": "t_service",
+   "createdAt": 1789387200084,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-11-15"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq7srv9f",
+   "typeId": "t_standby",
+   "createdAt": 1789387200085,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-16"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqnw3e9g",
+   "typeId": "t_rest",
+   "createdAt": 1789387200086,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-17"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqoies9h",
+   "typeId": "t_rest",
+   "createdAt": 1789387200087,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-18"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "421",
+    "f_relief": [
+     "Noah A."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvq09d29i",
+   "typeId": "t_service",
+   "createdAt": 1789387200088,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-11-19"
+  },
+  {
+   "values": {
+    "f_line": "T2",
+    "f_vehicle": "423",
+    "f_relief": [
+     "Tom N."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvqpsmn9j",
+   "typeId": "t_service",
+   "createdAt": 1789387200089,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-11-19"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "401",
+    "f_relief": [
+     "Adam E."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvrl5m09k",
+   "typeId": "t_service",
+   "createdAt": 1789387200090,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-20"
+  },
+  {
+   "values": {
+    "f_line": "4",
+    "f_vehicle": "429",
+    "f_relief": [
+     "Noah A."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvrwkhj9l",
+   "typeId": "t_service",
+   "createdAt": 1789387200091,
+   "origin": "manual",
+   "slotId": "s_m",
+   "date": "2026-11-21"
+  },
+  {
+   "values": {
+    "f_line": "12",
+    "f_vehicle": "448",
+    "f_relief": [
+     "Zoé H."
+    ]
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvrh60m9m",
+   "typeId": "t_service",
+   "createdAt": 1789387200092,
+   "origin": "manual",
+   "slotId": "s_e",
+   "date": "2026-11-21"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxvrnuec9n",
+   "typeId": "t_standby",
+   "createdAt": 1789387200093,
+   "origin": "manual",
+   "slotId": "s_d",
+   "date": "2026-11-22"
+  }
+ ],
+ "people": {
+  "Camille R.": {
+   "n": 5,
+   "t": 1791721827206
+  },
+  "Hugo M.": {
+   "n": 5,
+   "t": 1791721827206
+  },
+  "Inès B.": {
+   "n": 1,
+   "t": 1791721827206
+  },
+  "Lucas D.": {
+   "n": 2,
+   "t": 1791721827205
+  },
+  "Léa F.": {
+   "n": 8,
+   "t": 1791721827206
+  },
+  "Nathan G.": {
+   "n": 6,
+   "t": 1791721827206
+  },
+  "Chloé P.": {
+   "n": 3,
+   "t": 1791721827206
+  },
+  "Théo L.": {
+   "n": 0,
+   "t": 7
+  },
+  "Manon S.": {
+   "n": 2,
+   "t": 1791721827206
+  },
+  "Enzo V.": {
+   "n": 1,
+   "t": 1791721827205
+  },
+  "Jade C.": {
+   "n": 0,
+   "t": 10
+  },
+  "Louis T.": {
+   "n": 4,
+   "t": 1791721827206
+  },
+  "Sarah K.": {
+   "n": 5,
+   "t": 1791721827206
+  },
+  "Noah A.": {
+   "n": 3,
+   "t": 1791721827207
+  },
+  "Emma J.": {
+   "n": 4,
+   "t": 1791721827206
+  },
+  "Tom N.": {
+   "n": 2,
+   "t": 1791721827206
+  },
+  "Zoé H.": {
+   "n": 4,
+   "t": 1791721827207
+  },
+  "Adam E.": {
+   "n": 5,
+   "t": 1791721827207
+  }
+ },
+ "usage": {
+  "t_service|s_m": {
+   "n": 24,
+   "t": 1791721827207
+  },
+  "t_service|s_e": {
+   "n": 24,
+   "t": 1791721827207
+  },
+  "t_service|s_d": {
+   "n": 12,
+   "t": 1791721827207
+  },
+  "t_standby|s_d": {
+   "n": 12,
+   "t": 1791721827207
+  },
+  "t_rest|": {
+   "n": 22,
+   "t": 1791721827206
+  }
+ },
+ "gone": {}
+}

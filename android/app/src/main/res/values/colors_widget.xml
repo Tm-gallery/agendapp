@@ -1,0 +1,16 @@
+<resources>
+    <!-- Material 3 roles for the widgets (fallback without Material You: seed colour #2749D1). -->
+    <color name="w_bg">#F4F3FA</color>
+    <color name="w_surface">#FFFFFF</color>
+    <color name="w_surface_high">#E6E7F2</color>
+    <color name="w_on">#1A1B21</color>
+    <color name="w_on_var">#45464F</color>
+    <color name="w_outline">#C6C5D0</color>
+    <color name="w_primary">#2749D1</color>
+    <color name="w_on_primary">#FFFFFF</color>
+    <color name="w_primary_container">#DDE1FF</color>
+    <color name="w_on_primary_container">#001452</color>
+    <color name="w_secondary_container">#DFE1F9</color>
+    <color name="w_on_secondary_container">#181B2C</color>
+    <color name="w_tertiary">#76546E</color>
+</resources>

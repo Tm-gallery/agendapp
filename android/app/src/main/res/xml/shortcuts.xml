@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/sc_new"
+        android:shortcutId="new"
+        android:shortcutLongLabel="@string/sc_new_l"
+        android:shortcutShortLabel="@string/sc_new_s">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="agendapp://new"
+            android:targetClass="fr.agendapp.app.MainActivity"
+            android:targetPackage="fr.agendapp.app" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/sc_agenda"
+        android:shortcutId="plan"
+        android:shortcutLongLabel="@string/sc_plan_l"
+        android:shortcutShortLabel="@string/sc_plan_s">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="agendapp://plan"
+            android:targetClass="fr.agendapp.app.MainActivity"
+            android:targetPackage="fr.agendapp.app" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/sc_sync"
+        android:shortcutId="sync"
+        android:shortcutLongLabel="@string/sc_sync_l"
+        android:shortcutShortLabel="@string/sc_sync_s">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="agendapp://sync"
+            android:targetClass="fr.agendapp.app.MainActivity"
+            android:targetPackage="fr.agendapp.app" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/sc_backup"
+        android:shortcutId="backup"
+        android:shortcutLongLabel="@string/sc_backup_l"
+        android:shortcutShortLabel="@string/sc_backup_s">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="agendapp://backup"
+            android:targetClass="fr.agendapp.app.MainActivity"
+            android:targetPackage="fr.agendapp.app" />
+    </shortcut>
+</shortcuts>

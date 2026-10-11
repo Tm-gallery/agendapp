@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="w_radius">24dp</dimen>
+    <dimen name="w_inner_radius">16dp</dimen>
+</resources>

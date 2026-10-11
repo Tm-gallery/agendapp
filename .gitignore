@@ -1,0 +1,32 @@
+# Dependencies and generated files
+node_modules/
+web/dist/
+web/src/ui/icons.gen.json
+android/app/src/main/assets/www/
+
+# Android / Gradle
+android/.gradle/
+android/build/
+android/*/build/
+android/local.properties
+android/.kotlin/
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# Personal files: never in the repository
+carnet-de-service*.html
+*.sauvegarde.json
+agendapp-sauvegarde*.json
+agenda-sauvegarde*.json
+agendapp-backup*.json
+agendapp-configuration*.json
+agendapp-transfer*.txt
+
+# Editors and OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

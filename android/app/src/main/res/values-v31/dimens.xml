@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="w_radius">@android:dimen/system_app_widget_background_radius</dimen>
+    <dimen name="w_inner_radius">@android:dimen/system_app_widget_inner_radius</dimen>
+</resources>

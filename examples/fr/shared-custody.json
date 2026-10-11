@@ -1,0 +1,751 @@
+{
+ "v": 1,
+ "rev": 1789387200025,
+ "settings": {
+  "calName": "Famille",
+  "tz": "Europe/Paris",
+  "lang": "auto",
+  "theme": "auto",
+  "exportGrouping": "perColor",
+  "allDayEndExclusive": true,
+  "gcalCalendarId": "",
+  "haptics": true
+ },
+ "groups": [
+  {
+   "id": "g",
+   "name": "Activités"
+  }
+ ],
+ "slots": [
+  {
+   "id": "s_wed",
+   "name": "Mercredi après-midi",
+   "code": "MER",
+   "start": "13:30",
+   "end": "17:00",
+   "groupId": "g"
+  },
+  {
+   "id": "s_sat",
+   "name": "Samedi matin",
+   "code": "SAM",
+   "start": "09:00",
+   "end": "12:00",
+   "groupId": "g"
+  }
+ ],
+ "fields": [
+  {
+   "id": "f_kids",
+   "key": "kids",
+   "label": "Enfants",
+   "kind": "people",
+   "sticky": false
+  },
+  {
+   "id": "f_with",
+   "key": "with",
+   "label": "Accompagnateur",
+   "kind": "person",
+   "sticky": false
+  },
+  {
+   "id": "f_place",
+   "key": "place",
+   "label": "Lieu",
+   "kind": "text",
+   "sticky": false
+  }
+ ],
+ "types": [
+  {
+   "alarms": [],
+   "days": 7,
+   "snapWeek": true,
+   "times": {},
+   "location": "",
+   "descTpl": "",
+   "id": "t_week",
+   "name": "Semaine avec les enfants",
+   "code": "ENF",
+   "color": "2",
+   "kind": "allday",
+   "slotIds": [],
+   "fields": [],
+   "titleTpl": "{type}"
+  },
+  {
+   "alarms": [],
+   "days": 1,
+   "snapWeek": false,
+   "times": {},
+   "location": "",
+   "descTpl": "",
+   "id": "t_activity",
+   "name": "Activité",
+   "code": "ACT",
+   "color": "6",
+   "kind": "slot",
+   "slotIds": [
+    "s_wed",
+    "s_sat"
+   ],
+   "fields": [
+    {
+     "fieldId": "f_kids",
+     "slotIds": null,
+     "required": false
+    },
+    {
+     "fieldId": "f_with",
+     "slotIds": null,
+     "required": false
+    },
+    {
+     "fieldId": "f_place",
+     "slotIds": null,
+     "required": false
+    }
+   ],
+   "titleTpl": "{type}[ · {place}]"
+  }
+ ],
+ "rules": [],
+ "events": [
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 7,
+   "id": "ev_mv3swxw2xy0bk0",
+   "typeId": "t_week",
+   "createdAt": 1789387200000,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-14"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw20ceak1",
+   "typeId": "t_activity",
+   "createdAt": 1789387200001,
+   "origin": "manual",
+   "slotId": "s_wed",
+   "date": "2026-09-16"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2a1bkk2",
+   "typeId": "t_activity",
+   "createdAt": 1789387200002,
+   "origin": "manual",
+   "slotId": "s_sat",
+   "date": "2026-09-19"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2npwyk3",
+   "typeId": "t_activity",
+   "createdAt": 1789387200003,
+   "origin": "manual",
+   "slotId": "s_wed",
+   "date": "2026-09-23"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2vfkak4",
+   "typeId": "t_activity",
+   "createdAt": 1789387200004,
+   "origin": "manual",
+   "slotId": "s_sat",
+   "date": "2026-09-26"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 7,
+   "id": "ev_mv3swxw2eki1k5",
+   "typeId": "t_week",
+   "createdAt": 1789387200005,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-09-28"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2a0rvk6",
+   "typeId": "t_activity",
+   "createdAt": 1789387200006,
+   "origin": "manual",
+   "slotId": "s_wed",
+   "date": "2026-09-30"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw22ev2k7",
+   "typeId": "t_activity",
+   "createdAt": 1789387200007,
+   "origin": "manual",
+   "slotId": "s_sat",
+   "date": "2026-10-03"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2apfmk8",
+   "typeId": "t_activity",
+   "createdAt": 1789387200008,
+   "origin": "manual",
+   "slotId": "s_wed",
+   "date": "2026-10-07"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "exported",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw270djk9",
+   "typeId": "t_activity",
+   "createdAt": 1789387200009,
+   "origin": "manual",
+   "slotId": "s_sat",
+   "date": "2026-10-10"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 7,
+   "id": "ev_mv3swxw2qs5pka",
+   "typeId": "t_week",
+   "createdAt": 1789387200010,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-12"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2t9t1kb",
+   "typeId": "t_activity",
+   "createdAt": 1789387200011,
+   "origin": "manual",
+   "slotId": "s_wed",
+   "date": "2026-10-14"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2az7dkc",
+   "typeId": "t_activity",
+   "createdAt": 1789387200012,
+   "origin": "manual",
+   "slotId": "s_sat",
+   "date": "2026-10-17"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2dbojkd",
+   "typeId": "t_activity",
+   "createdAt": 1789387200013,
+   "origin": "manual",
+   "slotId": "s_wed",
+   "date": "2026-10-21"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2nse7ke",
+   "typeId": "t_activity",
+   "createdAt": 1789387200014,
+   "origin": "manual",
+   "slotId": "s_sat",
+   "date": "2026-10-24"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 7,
+   "id": "ev_mv3swxw2vlglkf",
+   "typeId": "t_week",
+   "createdAt": 1789387200015,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-10-26"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2ne9nkg",
+   "typeId": "t_activity",
+   "createdAt": 1789387200016,
+   "origin": "manual",
+   "slotId": "s_wed",
+   "date": "2026-10-28"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw25xmpkh",
+   "typeId": "t_activity",
+   "createdAt": 1789387200017,
+   "origin": "manual",
+   "slotId": "s_sat",
+   "date": "2026-10-31"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2z3loki",
+   "typeId": "t_activity",
+   "createdAt": 1789387200018,
+   "origin": "manual",
+   "slotId": "s_wed",
+   "date": "2026-11-04"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2gd9ukj",
+   "typeId": "t_activity",
+   "createdAt": 1789387200019,
+   "origin": "manual",
+   "slotId": "s_sat",
+   "date": "2026-11-07"
+  },
+  {
+   "values": {},
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 7,
+   "id": "ev_mv3swxw220wskk",
+   "typeId": "t_week",
+   "createdAt": 1789387200020,
+   "origin": "manual",
+   "slotId": null,
+   "date": "2026-11-09"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2smxdkl",
+   "typeId": "t_activity",
+   "createdAt": 1789387200021,
+   "origin": "manual",
+   "slotId": "s_wed",
+   "date": "2026-11-11"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw2889qkm",
+   "typeId": "t_activity",
+   "createdAt": 1789387200022,
+   "origin": "manual",
+   "slotId": "s_sat",
+   "date": "2026-11-14"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw331yhkn",
+   "typeId": "t_activity",
+   "createdAt": 1789387200023,
+   "origin": "manual",
+   "slotId": "s_wed",
+   "date": "2026-11-18"
+  },
+  {
+   "values": {
+    "f_kids": [
+     "Jade",
+     "Tom"
+    ],
+    "f_with": [
+     "Camille R."
+    ],
+    "f_place": "Piscine"
+   },
+   "review": {},
+   "note": "",
+   "status": "new",
+   "seq": 0,
+   "days": 1,
+   "id": "ev_mv3swxw3iy1mko",
+   "typeId": "t_activity",
+   "createdAt": 1789387200024,
+   "origin": "manual",
+   "slotId": "s_sat",
+   "date": "2026-11-21"
+  }
+ ],
+ "people": {
+  "Camille R.": {
+   "n": 20,
+   "t": 1791721827219
+  },
+  "Hugo M.": {
+   "n": 0,
+   "t": 1
+  },
+  "Inès B.": {
+   "n": 0,
+   "t": 2
+  },
+  "Lucas D.": {
+   "n": 0,
+   "t": 3
+  },
+  "Léa F.": {
+   "n": 0,
+   "t": 4
+  },
+  "Nathan G.": {
+   "n": 0,
+   "t": 5
+  },
+  "Chloé P.": {
+   "n": 0,
+   "t": 6
+  },
+  "Théo L.": {
+   "n": 0,
+   "t": 7
+  },
+  "Manon S.": {
+   "n": 0,
+   "t": 8
+  },
+  "Enzo V.": {
+   "n": 0,
+   "t": 9
+  },
+  "Jade C.": {
+   "n": 0,
+   "t": 10
+  },
+  "Louis T.": {
+   "n": 0,
+   "t": 11
+  },
+  "Sarah K.": {
+   "n": 0,
+   "t": 12
+  },
+  "Noah A.": {
+   "n": 0,
+   "t": 13
+  },
+  "Emma J.": {
+   "n": 0,
+   "t": 14
+  },
+  "Tom N.": {
+   "n": 0,
+   "t": 15
+  },
+  "Zoé H.": {
+   "n": 0,
+   "t": 16
+  },
+  "Adam E.": {
+   "n": 0,
+   "t": 17
+  },
+  "Jade": {
+   "n": 20,
+   "t": 1791721827219
+  },
+  "Tom": {
+   "n": 20,
+   "t": 1791721827219
+  }
+ },
+ "usage": {
+  "t_week|": {
+   "n": 5,
+   "t": 1791721827218
+  },
+  "t_activity|s_wed": {
+   "n": 10,
+   "t": 1791721827219
+  },
+  "t_activity|s_sat": {
+   "n": 10,
+   "t": 1791721827219
+  }
+ },
+ "gone": {},
+ "stats": {
+  "types": {
+   "t_week": {
+    "cat": "ignore"
+   }
+  }
+ }
+}
